@@ -1,0 +1,57 @@
+@import "./variaveis";
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $clr-accent;
+  color: $clr-dark;
+  font-family: $ff-primary;
+  font-size: $fs-body;
+  line-height: 1.6;
+  overflow: hidden;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+strong {
+  font-weight: $fw-bold;
+}
+
+:focus[form] {
+  outline: 2px solid $clr-accent;
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+  margin: 0;
+}
+
+h1 {
+  font-size: $fs-h1;
+}
+
+h2 {
+  font-size: $fs-h2;
+}
+
+h3 {
+  font-size: $fs-h3;
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    overflow: visible;
+  }
+}
