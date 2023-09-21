@@ -1,25 +1,25 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import {
-  faAngular,
+  faJava,
   faCss3,
   faGitAlt,
   faHtml5,
   faJsSquare,
   faReact,
-} from '@fortawesome/free-brands-svg-icons'
-import Loader from 'react-loaders'
-import AnimatedLetters from '../AnimatedLetters'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import './index.scss'
+} from '@fortawesome/free-brands-svg-icons';
+import Loader from 'react-loaders';
+import AnimatedLetters from '../AnimatedLetters';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './index.scss';
 
 const About = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
+  const [letterClass, setLetterClass] = useState('text-animate');
 
   useEffect(() => {
     return setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 3000)
-  }, [])
+      setLetterClass('text-animate-hover');
+    }, 3000);
+  }, []);
 
   return (
     <>
@@ -51,7 +51,7 @@ const About = () => {
         <div className="stage-cube-cont">
           <div className="cubespinner">
             <div className="face1">
-              <FontAwesomeIcon icon={faAngular} color="#DD0031" />
+              <FontAwesomeIcon icon={faJava} color="#DD0031" />
             </div>
             <div className="face2">
               <FontAwesomeIcon icon={faHtml5} color="#F06529" />
@@ -73,7 +73,7 @@ const About = () => {
       </div>
       <Loader type="pacman" />
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;

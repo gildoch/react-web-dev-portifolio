@@ -1,4 +1,4 @@
-@import "../../variaveis";
+@import '../../variaveis';
 
 .contact-form {
   width: 100%;
@@ -71,9 +71,9 @@
     float: left;
     border-radius: 4px;
     background: 0 0;
-    float: right;   
+    float: right;
     cursor: pointer;
-    transition: transform .5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     &:hover {
       transform: scale(1.1);
       background-color: $clr-light;
@@ -106,7 +106,7 @@
   top: 50px;
   right: 30%;
   z-index: 999999;
-  width: 267px;
+  width: 300px;
   padding: 20px;
   color: #fff;
   font-family: 'Helvetica';
@@ -115,9 +115,17 @@
   opacity: 0;
   animation: fadeIn 1s 1.5s;
   animation-fill-mode: forwards;
+  p {
+    span.icon {
+      display: inline-block;
+      text-align: center;
+      width: 20px;
+    }
+  }
 
   span {
     font-size: 16px;
+    margin-left: 0.5em;
 
     span {
       color: $clr-accent;
@@ -132,7 +140,7 @@
     width: 100%;
     height: 400px;
   }
-  
+
   .info-map {
     display: none;
   }

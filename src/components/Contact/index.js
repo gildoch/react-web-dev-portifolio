@@ -4,6 +4,13 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import AnimatedLetters from '../AnimatedLetters';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faLocation,
+  faAddressBook,
+  faPerson,
+  faCity,
+} from '@fortawesome/free-solid-svg-icons';
 import './index.scss';
 
 const Contact = () => {
@@ -20,7 +27,7 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm('gmail', 'template_YeJhZkgb', form.current, 'your-token')
+      .sendForm('gmail', 'service_6megky5', form.current, 'z5dlwnYPbGH4HNlce')
       .then(
         () => {
           alert('Message successfully sent!');
@@ -85,13 +92,31 @@ const Contact = () => {
           </div>
         </div>
         <div className="info-map">
-          Gildo Chauze,
-          <br />
-          Mozambique,
-          <br />
-          Maputo, Cidade de Maputo
-          <br />
-          <span>gildochauze@gmail.com</span>
+          <p>
+            <span className="icon">
+              <FontAwesomeIcon icon={faLocation} />
+            </span>
+            <span>Mozambique</span>
+          </p>
+          <p>
+            <span className="icon">
+              <FontAwesomeIcon icon={faCity} />
+            </span>
+            <span>Maputo, Cidade de Maputo</span>
+          </p>
+          <p>
+            <span className="icon">
+              <FontAwesomeIcon icon={faPerson} />
+            </span>
+            <span>Gildo Chauze</span>
+          </p>
+
+          <p>
+            <span className="icon">
+              <FontAwesomeIcon icon={faAddressBook} />
+            </span>
+            <span>gildochauze@gmail.com</span>
+          </p>
         </div>
         <div className="map-wrap">
           <MapContainer center={[44.96366, 19.61045]} zoom={13}>

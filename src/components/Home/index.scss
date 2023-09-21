@@ -1,4 +1,4 @@
-@import "../../variaveis";
+@import '../../variaveis';
 
 .home-page {
   .text-zone {
@@ -51,7 +51,7 @@
   h2 {
     color: $clr-light;
     margin-top: 2.5em;
-    font-weight:$fw-reg;
+    font-weight: $fw-reg;
     font-family: $ff-secondary;
     font-size: $fs-body;
     letter-spacing: 3px;
@@ -60,6 +60,7 @@
   .flat-button {
     display: inline-block;
     padding: 0.5em 2.5em;
+    margin: 2.5em;
     background: $clr-light;
     color: $clr-dark;
     text-decoration: none;
@@ -68,13 +69,10 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: $fw-bold;
-    transition: transform .5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     border-radius: 7px;
-    width: 223px;
-    height: 42px;
-    margin: 25px 5px;
     border: none;
-  
+
     &:hover {
       transform: scale(1.1);
       background-color: $clr-light;
@@ -83,7 +81,6 @@
     }
   }
 }
-
 
 @media screen and (max-width: 1200px) {
   .tags,
@@ -102,8 +99,8 @@
   .home-page .flat-button {
     float: none;
     display: block;
-    margin: 20px auto 0 auto;
-    width: 124px;
+    margin: 2em auto 0 auto;
+    width: 200px;
   }
 
   .logo-container {
