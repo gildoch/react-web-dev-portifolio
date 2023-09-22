@@ -1,14 +1,13 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import Loader from 'react-loaders'
-import AnimatedLetters from '../AnimatedLetters'
-import Logo from './Logo'
-import './index.scss'
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Loader from 'react-loaders';
+import AnimatedLetters from '../AnimatedLetters';
+import './index.scss';
 
 const Home = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
+  const [letterClass, setLetterClass] = useState('text-animate');
 
-  const nameArray = ['','G','i', 'l', 'd',"o"]
+  const nameArray = ['', 'G', 'i', 'l', 'd', 'o'];
   const jobArray = [
     'w',
     'e',
@@ -24,13 +23,13 @@ const Home = () => {
     'e',
     'r',
     '.',
-  ]
+  ];
 
   useEffect(() => {
     return setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 4000)
-  }, [])
+      setLetterClass('text-animate-hover');
+    }, 4000);
+  }, []);
 
   return (
     <>
@@ -61,12 +60,11 @@ const Home = () => {
             CONTACT ME
           </Link>
         </div>
-        <Logo />
       </div>
 
       <Loader type="pacman" />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
