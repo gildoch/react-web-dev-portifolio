@@ -139,6 +139,7 @@
 }
 
 @media screen and (max-width: 1200px) {
+
   .nav-bar {
     background: transparent;
     position: initial;
@@ -192,4 +193,10 @@
       display: block;
     }
   }
+
+  .logo{
+    img{
+    content: url(../../assets/images/logo-accent.png);
+    
+  }}
 }

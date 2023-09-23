@@ -1,6 +1,7 @@
 import './index.scss';
 import { useState } from 'react';
-import LogoS from '../../assets/images/logo-s.jpeg';
+import LogoWhite from '../../assets/images/logo-white.png';
+import LogoAccent from '../../assets/images/logo-white.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -19,7 +20,8 @@ const Sidebar = () => {
   return (
     <div className="nav-bar">
       <Link className="logo" to="/" onClick={() => setShowNav(false)}>
-        <img src={LogoS} alt="Logo" />
+        <img 
+        src={LogoWhite} alt="Logo" id='logo-s'/>
       </Link>
       <nav className={showNav ? 'mobile-show' : ''}>
         <NavLink

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Loader from 'react-loaders';
 import AnimatedLetters from '../AnimatedLetters';
+import banner from "../../assets/images/12063795_4884784.svg"
 import './index.scss';
 
 const Home = () => {
@@ -59,6 +60,9 @@ const Home = () => {
           <Link to="/contact" className="flat-button">
             CONTACT ME
           </Link>
+        </div>
+        <div className='image-zone'>
+          
         </div>
       </div>
 
