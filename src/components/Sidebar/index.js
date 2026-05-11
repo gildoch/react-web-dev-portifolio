@@ -1,7 +1,6 @@
 import './index.scss';
 import { useState } from 'react';
 import LogoWhite from '../../assets/images/logo-white.png';
-import LogoAccent from '../../assets/images/logo-white.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import {

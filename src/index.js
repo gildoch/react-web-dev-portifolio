@@ -5,12 +5,14 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './index.scss'
 
+const basename =
+  process.env.NODE_ENV === 'production' ? '/react-web-dev-portifolio' : '/'
+
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <App />
     </BrowserRouter>
-    ,
   </React.StrictMode>,
   document.getElementById('root')
 )

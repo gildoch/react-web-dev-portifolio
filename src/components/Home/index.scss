@@ -11,13 +11,12 @@
   }
 
   .image-zone{
-    
-    background-color: red;
-
     position: absolute;
     transform: translateY(-50%);
-    width: 40%;
     right: 10%;
+    top: 50%;
+    height: auto;
+    object-fit: cover;
   }
 
   h1 {
@@ -139,5 +138,9 @@
     bottom: auto;
     left: 0;
     margin: auto;
+  }
+
+  .image-zone{
+    display: none;
   }
 }

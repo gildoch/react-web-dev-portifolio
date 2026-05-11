@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Loader from 'react-loaders';
 import AnimatedLetters from '../AnimatedLetters';
-import banner from "../../assets/images/12063795_4884784.svg"
+import banner from "../../assets/images/hero_image.png"
 import './index.scss';
 
 const Home = () => {
@@ -62,7 +62,7 @@ const Home = () => {
           </Link>
         </div>
         <div className='image-zone'>
-          
+          <img src={banner} alt="Banner" className='banner-image' height={"100%"} width={500}/>
         </div>
       </div>
 

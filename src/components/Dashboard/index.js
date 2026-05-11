@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import Home from "./home";
 import Login from '../Login';
+import "./index.scss"
 
 const Dashboard = () => {
 
@@ -9,18 +10,20 @@ const Dashboard = () => {
     const auth = getAuth();
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsub = onAuthStateChanged(auth, (user) => {
             if(user) {
                 setUser(user);
             } else {
                 setUser(null);
             }
-        })
+        });
+
+        return () => unsub();
     }, []);
 
 
     return (
-       <div>
+       <div className="btn-wrapper">
            {user ? <Home /> : <Login />}
        </div>
     )
