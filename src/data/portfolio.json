@@ -1,34 +1,52 @@
 {
     "portfolio": [
         {
-            "cover": "/portfolio/1/one.png",
-            "title": "GGWP",
-            "description": "React, JSX, Tailwind, Jest",
-            "url": "http://google.com"
+            "cover": "https://ik.imagekit.io/gildoch/react_portfolio/svm_sentiment_analysis_VVbKueyau.png",
+            "title": "SVM - Sentiment Analysis",
+            "description": "Python, Streamlit, Scikit-learn, NLP, ML, Twitter Data Analysis",
+            "url": "https://svm-pfc.onrender.com"
         },
         {
-            "cover": "/portfolio/1/one.png",
-            "title": "GGWP",
-            "description": "React, JSX, Tailwind, Jest",
-            "url": "http://google.com"
+            "cover": "https://ik.imagekit.io/gildoch/react_portfolio/ner-visualization_QxCSGIVOW.png",
+            "title": "NER - Sentiment Analysis",
+            "description": "Python, NetworkX, NLP, NER, Social Network Analysis",
+            "url": "https://ner-pfc.onrender.com"
         },
         {
-            "cover": "/portfolio/1/one.png",
-            "title": "GGWP",
-            "description": "React, JSX, Tailwind, Jest",
-            "url": "http://google.com"
+            "cover": "https://ik.imagekit.io/gildoch/react_portfolio/lumiere_4uRFXZxSK.png",
+            "title": "Event Discovery App (Lumiere)",
+            "description": "Reactjs | Node.js | Express.js | PostgreSQL |",
+            "url": "https://lumiere-591e.onrender.com"
         },
         {
-            "cover": "/portfolio/1/one.png",
-            "title": "GGWP",
-            "description": "React, JSX, Tailwind, Jest",
-            "url": "http://google.com"
+            "cover": "https://ik.imagekit.io/gildoch/react_portfolio/populated-state_9XBrNTbzv.png?updatedAt=1778492194386",
+            "title": "Password Generator",
+            "description": "HTML | CSS | JS",
+            "url": "https://gildoch.github.io/password-generator/"
         },
         {
-            "cover": "/portfolio/1/one.png",
-            "title": "GGWP",
-            "description": "React, JSX, Tailwind, Jest",
-            "url": "http://google.com"
+            "cover": "https://ik.imagekit.io/gildoch/react_portfolio/Meme%20Generator_6JgFfxcll.jpg?updatedAt=1778492196427",
+            "title": "Meme Generator",
+            "description": "Reactjs | Meme API",
+            "url": "https://gildoch.github.io/meme-generator/"
+        },
+        {
+            "cover": "https://ik.imagekit.io/gildoch/react_portfolio/populated-watchlist_QLvOIioUj.png?updatedAt=1778492172373",
+            "title": "Watchlist",
+            "description": "HTML | CSS | React.js | MongoDB | OMDB API",
+            "url": "https://gildoch.github.io/movie-watchlist/index.html"
+        },
+        {
+            "cover": "https://ik.imagekit.io/gildoch/react_portfolio/dark-color-picker_bU0cZBdVx.png?updatedAt=1778492072132",
+            "title": "Color Picker",
+            "description": "HTML | CSS | JS | ColorAPI",
+            "url": "https://gildoch.github.io/color-scheme-generator/"
+        },
+          {
+            "cover": "https://ik.imagekit.io/gildoch/react_portfolio/github-octocat_YlhdUUyBF.png?updatedAt=1778492107591",
+            "title": "Veja mais...",
+            "description": "",
+            "url": "https://github.com/gildoch"
         }
     ]
 }

@@ -8,6 +8,13 @@ import './index.scss'
 const basename =
   process.env.NODE_ENV === 'production' ? '/react-web-dev-portifolio' : '/'
 
+const redirectPath = sessionStorage.getItem('gh-pages-redirect')
+
+if (redirectPath) {
+  sessionStorage.removeItem('gh-pages-redirect')
+  window.history.replaceState(null, '', `${basename}${redirectPath}`)
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter basename={basename}>

@@ -15,6 +15,8 @@ import './index.scss';
 
 const Contact = () => {
   const [letterClass, setLetterClass] = useState('text-animate');
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useRef();
 
   useEffect(() => {
@@ -25,16 +27,38 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICEID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Missing EmailJS configuration. Check .env variables.',
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus({ type: 'info', message: 'Sending email...' });
 
     emailjs
-      .sendForm('gmail', 'service_6megky5', form.current, 'z5dlwnYPbGH4HNlce')
+      .sendForm(serviceId, templateId, form.current, publicKey)
       .then(
         () => {
-          alert('Message successfully sent!');
-          window.location.reload(false);
+          setSubmitStatus({
+            type: 'success',
+            message: 'Message sent successfully.',
+          });
+          form.current.reset();
+          setIsSubmitting(false);
         },
         () => {
-          alert('Failed to send the message, please try again');
+          setSubmitStatus({
+            type: 'error',
+            message: 'Failed to send message. Please try again.',
+          });
+          setIsSubmitting(false);
         }
       );
   };
@@ -85,7 +109,17 @@ const Contact = () => {
                   ></textarea>
                 </li>
                 <li>
-                  <input type="submit" className="flat-button" value="SEND" />
+                  <input
+                    type="submit"
+                    className="flat-button"
+                    value={isSubmitting ? 'SENDING...' : 'SEND'}
+                    disabled={isSubmitting}
+                  />
+                </li>
+                <li className={`form-notification ${submitStatus.type}`}>
+                  <p role="status" aria-live="polite" className="status-text">
+                    {submitStatus.message}
+                  </p>
                 </li>
               </ul>
             </form>

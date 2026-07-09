@@ -2,7 +2,7 @@ import './index.scss';
 import { useState } from 'react';
 import LogoWhite from '../../assets/images/logo-white.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub, faBlogger } from '@fortawesome/free-brands-svg-icons';
 import {
   faHome,
   faUser,
@@ -19,8 +19,8 @@ const Sidebar = () => {
   return (
     <div className="nav-bar">
       <Link className="logo" to="/" onClick={() => setShowNav(false)}>
-        <img 
-        src={LogoWhite} alt="Logo" id='logo-s'/>
+        <img
+          src={LogoWhite} alt="Logo" id='logo-s' />
       </Link>
       <nav className={showNav ? 'mobile-show' : ''}>
         <NavLink
@@ -81,6 +81,15 @@ const Sidebar = () => {
           <a href="https://github.com/gildoch" target="_blank" rel="noreferrer">
             <FontAwesomeIcon
               icon={faGithub}
+              color="#4d4d4e"
+              className="anchor-icon"
+            />
+          </a>
+        </li>
+        <li>
+          <a href="https://portifolioch.wordpress.com/" target="_blank" rel="noreferrer">
+            <FontAwesomeIcon
+              icon={faBlogger}
               color="#4d4d4e"
               className="anchor-icon"
             />

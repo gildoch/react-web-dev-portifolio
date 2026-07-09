@@ -7,8 +7,9 @@ A personal portfolio built with React, focused on smooth animations, clean navig
 - Modern single-page portfolio experience
 - Animated UI with `animate.css`, `react-loaders`, and `gsap`
 - Client-side routing with `react-router-dom`
-- Contact workflow using EmailJS and Firebase integration points
+- Contact workflow using EmailJS
 - Portfolio content powered by local JSON data
+- Dashboard for adding new portfolio items (stored in localStorage)
 - Ready-to-deploy to GitHub Pages
 
 ## Tech Stack
@@ -18,11 +19,26 @@ A personal portfolio built with React, focused on smooth animations, clean navig
 - Sass (SCSS)
 - Font Awesome
 - Leaflet / React Leaflet
-- Firebase
 - EmailJS
+- ImageKit (image optimization and storage)
 - Create React App tooling (`react-scripts`)
 
 ## Getting Started
+
+### Environment Variables
+
+Create a `.env` file in the root directory with ImageKit credentials:
+
+```env
+REACT_APP_IMAGEKIT_PRIVATE_KEY=your_private_key
+REACT_APP_IMAGEKIT_PUBLIC_KEY=your_public_key
+REACT_APP_IMAGEKIT_URL_ENDPOINT=https://ik.imagekit.io/your_account_id
+REACT_APP_EMAILJS_SERVICEID=your_emailjs_service_id
+REACT_APP_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+REACT_APP_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
+```
+
+Get these credentials from your [ImageKit dashboard](https://imagekit.io/dashboard).
 
 ### 1. Install dependencies
 
@@ -78,6 +94,43 @@ src/
 - `/contact`
 - `/portfolio`
 - `/dashboard`
+
+## Data Management
+
+### Portfolio Data & Images
+
+Portfolio items are loaded from `src/data/portfolio.json`. The Portfolio page displays:
+- Static items from the JSON file with ImageKit-hosted images
+- Any new items added through the Dashboard (also stored in ImageKit)
+- All images are optimized through ImageKit's transformation pipeline
+
+Images are displayed using ImageKit's `IKImage` component which provides:
+- Lazy loading for better performance
+- Automatic optimization (quality, dimensions)
+- LQIP (Low Quality Image Placeholder) for smooth loading
+- Responsive image transformation
+
+### Dashboard
+
+The Dashboard provides a form to add new portfolio items with the following workflow:
+1. User selects an image file
+2. Image is automatically uploaded to ImageKit
+3. Once uploaded, the form can be submitted
+4. Portfolio item (with ImageKit URL) is stored in browser localStorage
+5. New items appear immediately in the Portfolio view
+6. Data persists across sessions
+
+### Portfolio JSON Structure
+
+Each portfolio item includes:
+```json
+{
+  "cover": "https://ik.imagekit.io/...",  // ImageKit image URL
+  "title": "Project name",
+  "description": "Technologies used",
+  "url": "Project link"
+}
+```
 
 ## Troubleshooting
 

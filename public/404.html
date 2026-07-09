@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0; url=/react-web-dev-portifolio/" />
+    <script>
+      (function () {
+        var path = window.location.pathname.replace('/react-web-dev-portifolio', '')
+        var search = window.location.search
+        var hash = window.location.hash
+
+        if (path && path !== '/') {
+          sessionStorage.setItem('gh-pages-redirect', path + search + hash)
+        }
+
+        window.location.replace('/react-web-dev-portifolio/')
+      })()
+    </script>
+    <title>Redirecting</title>
+  </head>
+  <body></body>
+</html>

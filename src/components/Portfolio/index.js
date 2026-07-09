@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Loader from "react-loaders";
 import AnimatedLetters from "../AnimatedLetters";
+import { Image, ImageKitProvider } from "@imagekit/react";
 import "./index.scss";
-import { getDocs, collection } from 'firebase/firestore';
-import { db } from '../../firebase';
+import portfolioData from '../../data/portfolio.json';
+import { imageKitConfig} from '../../configs/imagekit.config';
 
 const Portfolio = () => { 
     const [letterClass, setLetterClass] = useState('text-animate');
@@ -20,38 +21,48 @@ const Portfolio = () => {
     });
 
     useEffect(() => {
-        getPortfolio();
+        const staticData = portfolioData.portfolio;
+        const localItems = JSON.parse(localStorage.getItem('portfolioItems')) || [];
+        setPortfolio([...staticData, ...localItems]);
     }, []);
-
-    const getPortfolio = async () => {
-        const querySnapshot = await getDocs(collection(db, 'portfolio'));
-        setPortfolio(querySnapshot.docs.map((doc) => doc.data()));
-    }
 
     const renderPortfolio = (portfolio) => {
         return (
-            <div className="images-container">
-                {
-                    portfolio.map((port, idx) => {
-                        return (
-                            <div className="image-box" key={idx}>
-                                <img 
-                                src={port.image}
-                                className="portfolio-image"
-                                alt="portfolio" />
-                                <div className="content">
-                                    <p className="title">{port.name}</p>
-                                    <h4 className="description">{port.description}</h4>
-                                    <button
-                                        className="btn"
-                                        onClick={() => window.open(port.url)}
-                                    >View</button>
+            <ImageKitProvider urlEndpoint={imageKitConfig.urlEndpoint}>
+                <div className="images-container">
+                    {
+                        portfolio.map((port, idx) => {
+                            return (
+                                <div className="image-box" key={idx}>
+                                    <Image 
+                                        src={port.cover}
+                                        className="portfolio-image"
+                                        alt={port.title}
+                                        loading="lazy"
+                                        lqip={{ active: true }}
+                                        transformation={[
+                                            {
+                                                height: 400,
+                                                width: 400,
+                                                quality: 80,
+                                                crop: "fill",
+                                            }
+                                        ]}
+                                    />
+                                    <div className="content">
+                                        <p className="title">{port.title}</p>
+                                        <h4 className="description">{port.description}</h4>
+                                        <button
+                                            className="btn"
+                                            onClick={() => window.open(port.url)}
+                                        >View</button>
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    })
-                }
-            </div>
+                            )
+                        })
+                    }
+                </div>
+            </ImageKitProvider>
         );
     }
 

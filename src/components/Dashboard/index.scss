@@ -52,10 +52,11 @@
 .dashboard-card {
   width: 100%;
   background: rgba(255,255,255,0.03);
-  padding: 1.15rem;
+  padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(2,6,23,0.45);
   border: 1px solid rgba(255,255,255,0.04);
+  background-color: #fff;
 
   h2 { margin: 0 0 0.85rem 0; }
 
@@ -63,6 +64,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 0.85rem;
+    color: yellow
 
     label { font-size: 0.95rem; margin-bottom: 0.35rem; color: rgba(255,255,255,0.9); }
 

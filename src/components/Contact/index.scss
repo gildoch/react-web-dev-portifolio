@@ -35,6 +35,38 @@
       color: $clr-accent;
       border: 1px solid $clr-accent;
     }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+  }
+
+  .form-notification {
+    margin-top: 0.25em;
+    min-height: 1.5em;
+    opacity: 1;
+    animation: none;
+
+    .status-text {
+      margin: 0;
+      font-family: $ff-primary;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+  }
+
+  .form-notification.info .status-text {
+    color: #bdbdbd;
+  }
+
+  .form-notification.success .status-text {
+    color: #71ff98;
+  }
+
+  .form-notification.error .status-text {
+    color: #ff7a7a;
   }
 }
 
