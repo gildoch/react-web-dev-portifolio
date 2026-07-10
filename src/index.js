@@ -5,8 +5,24 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './index.scss'
 
-const basename =
-  process.env.NODE_ENV === 'production' ? '/react-web-dev-portifolio' : '/'
+const getBasename = () => {
+  if (process.env.NODE_ENV !== 'production') {
+    return '/'
+  }
+
+  if (!process.env.PUBLIC_URL) {
+    return '/portifolio'
+  }
+
+  try {
+    const pathname = new URL(process.env.PUBLIC_URL).pathname.replace(/\/$/, '')
+    return pathname || '/portifolio'
+  } catch {
+    return '/portifolio'
+  }
+}
+
+const basename = getBasename()
 
 const redirectPath = sessionStorage.getItem('gh-pages-redirect')
 
